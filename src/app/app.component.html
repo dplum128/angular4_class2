@@ -4,7 +4,7 @@
     <app-title></app-title>
     <input class="new-todo" [placeholder]="inputHint"
     [value]="inputItem" autofocus
-    (keyup.enter)="addTodos($event.target.value)"
+    (keyup.enter)="addTodos2()"
     [(ngModel)]="inputItem"
     >
     <p>{{ inputItem }}</p>
