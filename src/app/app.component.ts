@@ -9,17 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   // tslint:disable-next-line:no-inferrable-types
   inputHint: string = 'What needs to be done?';
-  inputItem = '';
+  inputItem: string;
 
   todos: any[] = [];
 
   addTodos(input: string) {
-    console.log(input);
-    // if (input !== '') {
-    //   this.todos.push(input);
-    // }
-    this.todos = [...this.todos, input];
+    if (input) {
+      // this.todos = [...this.todos, input.value];
+      console.log(input);
+      this.todos.push(input);
+      input = '';
+      this.inputItem = input;
+    }
     console.log(this.todos);
+  }
+
+  addTodos2() {
+    if (this.inputItem) {
+      this.todos = [...this.todos, this.inputItem];
+      this.inputItem = '';
+    }
   }
 
   inputWord(input: string) {
